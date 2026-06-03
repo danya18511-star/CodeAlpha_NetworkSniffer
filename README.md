@@ -9,7 +9,6 @@ Requirements:
 - Windows: must run as Administrator
 - Linux / macOS: must run with `sudo`
 
----
 
 How to Run:
 
@@ -35,8 +34,7 @@ When the program starts, it prints a summary of the current settings:
 ------------------------------------------------------------
   Press Ctrl+C to stop
 
-
-Packet Lines
+Packet Lines:
 
 Each captured packet prints on one or two lines:
 
@@ -45,7 +43,6 @@ Each captured packet prints on one or two lines:
 
 
 | Field | Example | Meaning |
-|---|---|---|
 | Packet number | `[    1]` | How many packets have been captured so far |
 | Timestamp | `14:23:01.442` | Time the packet was captured (hours:minutes:seconds.milliseconds) |
 | Protocol | `TCP` | The transport protocol (TCP, UDP, ICMP, or PROTO-X for unknown) |
@@ -56,7 +53,7 @@ Each captured packet prints on one or two lines:
 | Size | `84B` | Total size of the IP packet in bytes |
 
 
-TCP / UDP Second Line
+TCP / UDP Second Line:
 
 For TCP and UDP packets, a second line shows port and service information:
 
@@ -64,16 +61,14 @@ For TCP and UDP packets, a second line shows port and service information:
 
 
 | Field | Example | Meaning |
-|---|---|---|
 | Source port | `52341` | Port on the sending machine (high numbers are usually random/ephemeral) |
 | Destination port | `80` | Port on the receiving machine |
 | Service name | `HTTP` | The well-known service on that port, if recognized |
 | TCP flags | `[SYN]` | Active TCP control flags (see below) |
 
-TCP Flags explained
+TCP Flags explained:
 
 | Flag | Meaning |
-|---|---|
 | `SYN` | Starting a new connection (first step of the handshake) |
 | `SYN ACK` | Server accepting the connection (second step) |
 | `ACK` | Acknowledging received data |
@@ -112,7 +107,7 @@ DNS Line (shown when --verbose or UDP port 53)
 | `Qs` | Number of questions in the DNS message |
 
 
-Verbose Payload (--verbose flag)
+Verbose Payload (--verbose flag):
 
 When `verbose` is enabled, the raw payload content is shown beneath each packet:
 
@@ -153,7 +148,7 @@ When you press `Ctrl+C` or the packet count is reached, a summary is printed:
 | Protocol Breakdown | Count and percentage per protocol, with a bar chart |
 | Top Source IPs | The 5 most active source IP addresses |
 
-JSON Output (--output flag)
+JSON Output (--output flag):
 
 When `--output captures.json` is used, each packet is saved as a JSON object:
 
@@ -175,7 +170,7 @@ json
 
 This file can be opened in any text editor or loaded into Python for further analysis.
 
-Common Issues
+Common Issues:
 
 | Problem | Fix |
 | `[ERROR] Administrator privileges required` | Right-click PyCharm or cmd → Run as administrator |
